@@ -1,0 +1,32 @@
+1. You evaluated results for two fundamentally different, but due to their similar names often confused algorithms, k-Means and k-Nearest Neighbours.
+a) Which one does classification, which one is a clustering method?  
+K-M clustering 
+K-NN classification
+
+b) One of the methods is a supervised method, one is unsupervised. Which one is which, and what does that mean?
+K-M UnSupervised 
+K-NN Supervised
+
+2. You used different tools built into SciKitLearn to evaluate your implementation. 
+a) What is represented in the rows and columns of a confusion matrix produced with metrics.confusion_matrix( <test_labels>, <predicted>)? 
+Row is actual number
+column is predicted number
+
+b) What are the elements of the classification report, i.e., what do the terms precision, recall, f1-score, support, accuracy, macro avg, and weighted avg mean and what do the rows in the table represent when you generate a report with metrics.classification_report( <test_labels>, <predicted>)?
+
+As defined by sklearn Precision-Recall (https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html):
+"Precision (P) is defined as the number of true positives over the number of true positives plus the number of false positives"
+"Recall (R) is defined as the number of true positives over the number of true positives plus the number of false negatives"
+"These quantities are also related to the F1 score, which is defined as the harmonic mean of precision and recall" (2 * (P * R) / (P + R))
+support "is the number of occurrences of each class in y_true".
+accuracy is the average amount of correct answers. n_correct_predictions / n_samples
+macro avg "is averaging the unweighted mean per label" 
+Weighted avg mean "is averaging the support-weighted mean per label"
+
+c) Obviously, the classification report and confusion matrix are not suitable tools to evaluate a clustering algorithm's results directly. Some better suited measures are:
+metrics.completeness_score( <train_labels>, <clustered>)
+metrics.homogeneity_score( <train_labels>, <clustered>)
+What do those tell you?
+
+completeness_score: "A clustering result satisfies completeness if all the data points that are members of a given class are elements of the same cluster"
+homogeneity_score: "A clustering result satisfies homogeneity if all of its clusters contain only data points which are members of a single class"

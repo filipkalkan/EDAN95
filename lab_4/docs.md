@@ -37,4 +37,29 @@ Yes.
 
 --- 
 
-## EM
+## Can you explain your implementation / initialisation details of the EM:
+
+### How did you set up the cluster means and variances?
+
+Random (uniform)
+### What did you use as the smoothing factor for the variance in the computation of the gaussian normal distribution?
+
+0.2
+
+---
+
+### What did you observe is used as a stop criterion for the EM-iterations? Which threshold did you apply?
+
+Euclidean distance < 1.0
+
+---
+
+### You get results roughly according to the following (I start with a random set of clusters, which I get by repeatedly splitting off a tenth of the data set and calculate means and variances over those; use a smoothing factor (blur) of 0.01, and a stopping threshold at 0.001):
+
+Good!
+
+---
+
+### Can you explain the results intuitively? What does it mean that both variants of the same algorithm (EM) produce clusterings that are in the same ballpark neighbourhood of accuracy compared to the known targets, but that do not seem to be in agreement much more than they are with the ground truth when compared to each other? 
+
+While k-means uses EM for its classification, it has some more "tricks". If the predictions would be almost identical, there wouldn't be any additions the K-means adds...

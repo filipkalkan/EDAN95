@@ -1,2 +1,5 @@
 **/MNIST_Light
 **/__pycache__
+**/corpus
+**/flowers
+**/flowers_split

@@ -3,3 +3,4 @@
 **/corpus
 **/flowers
 **/flowers_split
+*.keras
